@@ -68,7 +68,7 @@
         <h2>Our Courses</h2>
       </div>
       <div class="course-container">
-        <div class="course-card course-card-1 course-card-active">
+        <div class="course-card course-card-1 course-card-active" data-num="1">
           <img src="img/surf-img 1.jpg" alt="" />
           <div class="course-card-text">
             <h5 class="diff">Level 1</h5>
@@ -81,7 +81,7 @@
           </div>
         </div>
 
-        <div class="course-card course-card-2">
+        <div class="course-card" data-num="2">
           <img src="img/surf-img 2.jpg " alt="" />
           <div class="course-card-text">
             <h5 class="diff">Level 2</h5>
@@ -93,7 +93,7 @@
             <button class="btn-primary">Book Now</button>
           </div>
         </div>
-        <div class="course-card course-card-3">
+        <div class="course-card" data-num="3">
           <img src="img/surf-img 3.jpg" alt="" />
           <div class="course-card-text">
             <h5 class="diff">Level 3</h5>
@@ -105,10 +105,9 @@
             <button class="btn-primary">Book Now</button>
           </div>
         </div>
-        <div class="selector">
-          <button data-num="1" class="selector-btn selector-active">01</button>
-          <button class="selector-btn" data-num="2">02</button>
-          <button class="selector-btn" data-num="3">03</button>
+        <div class="slider">
+          <i class="fas fa-chevron-left slider-btn"></i
+          ><i class="fas fa-chevron-right slider-btn"></i>
         </div>
       </div>
     </section>
@@ -176,43 +175,26 @@
     <footer>
       <div class="contact-container">
         <h2>Interested in our lessons?</h2>
-        <button class="btn-tertiary">Contact Us Now</button>
+        <button class="btn-tertiary">Our Courses</button>
       </div>
       <div class="footer-container">
-        <div class="footer-about">
-          <h4 class="footer-title">About us</h4>
-          <div class="footer-about-container">
-            <img src="img/surfphoto 4.png" alt="surfphoto 4" />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequatur nisi voluptatum nobis temporibus ut incidunt quidem
-              similique itaque minus sunt. Voluptates enim omnis amet eum.
-            </p>
-          </div>
-        </div>
-        <div class="footer-links">
-          <h4 class="footer-title">Quick Links</h4>
-          <ul>
-            <li class="footer-link">
-              <a href="#">Home</a>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </li>
-            <li class="footer-link">
-              <a href="#">About</a>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </li>
-            <li class="footer-link">
-              <a href="#">Courses</a>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </li>
-            <li class="footer-link">
-              <a href="#">Contact Us</a>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </li>
-          </ul>
-        </div>
+        <ul class="footer-links">
+          <li class="footer-link">
+            <a href="#">Home</a>
+          </li>
+          <li class="footer-link">
+            <a href="#">About</a>
+          </li>
+          <li class="footer-link">
+            <a href="#">Courses</a>
+          </li>
+          <li class="footer-link">
+            <a href="#">Contact Us</a>
+          </li>
+        </ul>
       </div>
       <h5 class="copyright">Copyright © 2021 Owen Tam Design Limited</h5>
+      <h5 class="copyright2">THIS IS JUST A DEMO/FICTIONAL COMPANY</h5>
     </footer>
   </body>
 </html>

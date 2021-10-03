@@ -41,19 +41,57 @@ window.addEventListener("resize", function () {
   }
 });
 
-//TODO Make the course cards hover like hoststinger
-const selector = document.querySelector(".selector");
-const allCourseCards = document.querySelectorAll(".course-card");
+const slider = document.querySelector(".slider");
+const sliderLeftBtn = document.querySelector(".fa-chevron-left");
+const sliderRightBtn = document.querySelector(".fa-chevron-right");
+const slides = document.querySelectorAll(".course-card");
+const toSlide = function (slide) {
+  slides.forEach(slide => slide.classList.remove("course-card-active"));
+  slide.classList.add("course-card-active");
+};
+const nextSlide = function () {
+  if (
+    Number(document.querySelector(".course-card-active").dataset.num) <
+    slides.length
+  ) {
+    const next = document.querySelector(
+      `[data-num = '${
+        Number(document.querySelector(".course-card-active").dataset.num) + 1
+      }'] `
+    );
 
-selector.addEventListener("click", function (e) {
-  if (e.target.classList.contains("selector-btn")) {
-    allCourseCards.forEach(card => {
-      card.classList.remove("course-card-active");
-    });
-    document
-      .querySelector(`.course-card-${e.target.dataset.num}`)
-      .classList.add("course-card-active");
-    selectorBtns.forEach(btn => btn.classList.remove("selector-active"));
-    e.target.classList.add("selector-active");
+    toSlide(next);
+  } else {
+    toSlide(...Array.from(slides).slice(0, 1));
   }
-});
+};
+const lastSlide = function () {
+  if (Number(document.querySelector(".course-card-active").dataset.num) > 1) {
+    const last = document.querySelector(
+      `[data-num = '${
+        Number(document.querySelector(".course-card-active").dataset.num) - 1
+      }'] `
+    );
+
+    toSlide(last);
+  } else {
+    toSlide(...Array.from(slides).slice(-1));
+  }
+};
+sliderRightBtn.addEventListener("click", nextSlide);
+sliderLeftBtn.addEventListener("click", lastSlide);
+// const selector = document.querySelector(".selector");
+// const allCourseCards = document.querySelectorAll(".course-card");
+
+// selector.addEventListener("click", function (e) {
+//   if (e.target.classList.contains("selector-btn")) {
+//     allCourseCards.forEach(card => {
+//       card.classList.remove("course-card-active");
+//     });
+//     document
+//       .querySelector(`.course-card-${e.target.dataset.num}`)
+//       .classList.add("course-card-active");
+//     selectorBtns.forEach(btn => btn.classList.remove("selector-active"));
+//     e.target.classList.add("selector-active");
+//   }
+// });
