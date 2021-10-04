@@ -105,10 +105,29 @@ nav {
 .btn-primary {
   border: none;
   background: var(--color-primary);
-  padding: 0.8rem 1rem;
+  padding: 0.7rem 1rem;
   font-size: 1.1rem;
   color: white;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: var(--color-primary-dark);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms ease-in-out;
+}
+.btn-primary:hover::before,
+.btn-primary:focus::before {
+  transform: scaleX(1);
 }
 .nav-link a:hover {
   color: var(--color-primary);
@@ -116,9 +135,7 @@ nav {
 .nav-link-active a {
   color: var(--color-primary);
 }
-.btn-primary:hover {
-  background: var(--color-primary-dark);
-}
+
 .submenu.submenu-active {
   display: block;
   position: absolute;
@@ -285,7 +302,7 @@ button {
 
 .slider {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   position: absolute;
   z-index: 5;
   bottom: 1rem;
@@ -293,9 +310,10 @@ button {
   opacity: 100;
 }
 .slider-btn {
-  font-size: 2rem;
+  font-size: 5rem;
   cursor: pointer;
-  color: var(--color-primary);
+  color: rgb(162, 176, 182);
+  transition: color 0.2s;
 }
 .slider-btn:hover {
   color: var(--color-primary-dark);
@@ -316,8 +334,8 @@ button {
   .course-card-text {
     padding: clamp(16px, 5%, 32px);
   }
-  button.selector-btn {
-    cursor: pointer;
+  .slider-btn {
+    font-size: 2.5rem;
   }
 }
 @media (max-width: 470px) {
@@ -419,7 +437,7 @@ button {
   font-size: 1.05rem;
 }
 .testimonial.testimonial-featured p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 .testimonial .person {
   display: flex;
@@ -491,15 +509,18 @@ button {
     display: none;
   }
 }
-.spacer2 {
-  aspect-ratio: 900/100;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-.layer2 {
-  background-image: url("img/layered-waves.svg");
+
+@media (min-width: 600px) {
+  .spacer2 {
+    aspect-ratio: 900/100;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .layer2 {
+    background-image: url("img/layered-waves.svg");
+  }
 }
 footer {
   background-color: var(--color-primary);
@@ -550,9 +571,13 @@ footer {
   text-decoration: underline;
   color: white;
 }
-.footer-links p {
-  font-size: 1rem;
+.footer-links li {
+  transition: all 0.3s;
 }
+.footer-links li:hover {
+  transform: translateY(-0.2rem);
+}
+
 @media (max-width: 506px) {
   .footer-container {
     width: 90vw;
@@ -575,4 +600,5 @@ h5.copyright2 {
   font-weight: 500;
   padding-bottom: 1rem;
   margin-inline: 0.5rem;
+  font-size: 0.5rem;
 }
