@@ -38,17 +38,35 @@ nav {
 
 .btn-tertiary {
   border: none;
-  background-color: var(--color-secondary);
+  background-color: var(--color-secondary-dark);
   padding: 0.5rem 5rem;
   font-size: 1.2rem;
   border-radius: 50px;
   cursor: pointer;
   font-weight: 500;
   color: white;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
-.btn-tertiary:hover {
-  background-color: var(--color-secondary-dark);
+.btn-tertiary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-secondary);
+  z-index: -1;
+  border-radius: 50px;
+  transform: scale(1.5);
+  transition: transform 0.45s ease-in-out;
 }
+.btn-tertiary:hover::before,
+.btn-tertiary:focus::before {
+  transform: scale(0);
+}
+
 .btn-secondary {
   border: none;
   background-color: var(--color-primary);
@@ -210,7 +228,12 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url("img/surf-img 4.jpg");
+  background: linear-gradient(
+      180deg,
+      rgba(18, 94, 151, 0.5),
+      rgba(0, 118, 173, 0.5)
+    ),
+    url("img/surf-img 4.jpg");
   min-height: 90vh;
   background-size: cover;
 
@@ -235,14 +258,14 @@ button {
   margin-bottom: 1.6rem;
   color: white;
 }
-.hero-overlay {
+/* .hero-overlay {
   height: 100%;
   width: 100%;
   position: absolute;
   background-color: rgba(55, 123, 182, 0.3);
   backdrop-filter: blur(3px);
   z-index: 1;
-}
+} */
 
 @media (max-width: 790px) {
   .hero-title,
