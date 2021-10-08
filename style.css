@@ -537,9 +537,9 @@ button {
   .spacer2 {
     aspect-ratio: 900/100;
     width: 100%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
   }
   .layer2 {
     background-image: url("img/layered-waves.svg");
