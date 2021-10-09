@@ -423,7 +423,8 @@ button {
     font-size: 2.5rem;
   }
   .spacer {
-    aspect-ratio: 960/200;
+    min-height: 20vw;
+    /* aspect-ratio: 960/200; */
     width: 100%;
 
     background-size: cover;
@@ -536,8 +537,8 @@ button {
 
 @media (min-width: 600px) {
   .spacer2 {
-    min-height: 4rem;
-    /* aspect-ratio: 900/100; */
+    min-height: 10vw;
+    aspect-ratio: 900/100;
     width: 100%;
     background-size: cover;
     background-position: center;
