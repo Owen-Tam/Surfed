@@ -337,7 +337,7 @@ button {
   display: flex;
   gap: 2rem;
   position: absolute;
-  z-index: 5;
+  z-index: 2;
   bottom: 1rem;
   right: 2rem;
   opacity: 100;

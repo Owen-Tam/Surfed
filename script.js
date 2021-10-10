@@ -97,8 +97,9 @@ sliderLeftBtn.addEventListener("click", lastSlide);
 // });
 const nav = document.querySelector(".navbar");
 let lastScroll = 0;
+
 window.addEventListener("scroll", () => {
-  const currentScroll = window.pageYOffset;
+  currentScroll = window.pageYOffset;
   console.log(currentScroll);
   if (currentScroll <= 0) {
     nav.classList.remove("scroll-up");
