@@ -8,7 +8,7 @@
   --color-primary: rgb(0, 110, 206);
   --color-primary-dark: rgb(0, 85, 160);
   --color-secondary: #f4743b;
-  --color-secondary-dark: #e66e3b;
+  --color-secondary-dark: #dd6a38;
   --color-title: rgb(43, 43, 43);
 }
 h1,
@@ -29,13 +29,23 @@ button {
   appearance: none;
 }
 nav {
-  background: rgb(243, 243, 243);
+  background: rgba(243, 243, 243);
+
   height: clamp(4.2rem, 9vh, 5rem);
+  position: fixed;
+  width: 100%;
   display: flex;
   align-items: center;
   padding: 0 clamp(1.1rem, 4vw, 2.1rem);
+  z-index: 4;
+  transition: all 300ms ease-in-out;
 }
-
+nav.scroll-down {
+  transform: translate3d(0, -100%, 0);
+}
+nav.scroll-up {
+  filter: drop-shadow(0 -10px 10px rgb(170, 170, 170));
+}
 .btn-tertiary {
   border: none;
   background-color: var(--color-secondary-dark);
@@ -60,7 +70,7 @@ nav {
   z-index: -1;
   border-radius: 50px;
   transform: scale(1.5);
-  transition: transform 0.45s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 .btn-tertiary:hover::before,
 .btn-tertiary:focus::before {
@@ -174,7 +184,7 @@ nav {
   width: 100vw;
   background: black;
   opacity: 0;
-  z-index: 9;
+  z-index: 3;
 }
 .overlay.overlay-shown {
   opacity: 0.2;
@@ -234,7 +244,7 @@ nav {
       rgba(0, 118, 173, 0.5)
     ),
     url("img/surf-img 4.jpg");
-  min-height: 90vh;
+  min-height: 100vh;
   background-size: cover;
 
   backdrop-filter: blur(3px);
