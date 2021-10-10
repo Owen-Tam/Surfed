@@ -104,7 +104,11 @@ window.addEventListener("scroll", () => {
   // if (currentScroll <= 0) {
   //   nav.classList.remove("scroll-up");
   // }
-  if (currentScroll > lastScroll && !nav.classList.contains("scroll-down")) {
+  if (
+    currentScroll > lastScroll &&
+    !nav.classList.contains("scroll-down") &&
+    !(currentScroll <= 0)
+  ) {
     nav.classList.remove("scroll-up");
     nav.classList.add("scroll-down");
   }
