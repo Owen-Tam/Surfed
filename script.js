@@ -101,21 +101,17 @@ let lastScroll = 0;
 window.addEventListener("scroll", () => {
   currentScroll = window.pageYOffset;
   console.log(currentScroll);
-
+  if (currentScroll <= 0) {
+    nav.classList.remove("scroll-up");
+  }
   if (currentScroll > lastScroll && !nav.classList.contains("scroll-down")) {
     nav.classList.remove("scroll-up");
     nav.classList.add("scroll-down");
   }
-  if (
-    currentScroll < lastScroll &&
-    !nav.classList.contains("scroll-up") &&
-    lastScroll >= 0
-  ) {
+  if (currentScroll < lastScroll && !nav.classList.contains("scroll-up")) {
     nav.classList.remove("scroll-down");
     nav.classList.add("scroll-up");
   }
-  if (currentScroll <= 0) {
-    nav.classList.add("scroll-up");
-  }
+
   lastScroll = currentScroll;
 });
