@@ -100,7 +100,7 @@ let lastScroll = 0;
 
 window.addEventListener("scroll", () => {
   currentScroll = window.pageYOffset;
-  console.log(currentScroll);
+
   // if (currentScroll <= 0) {
   //   nav.classList.remove("scroll-up");
   // }
